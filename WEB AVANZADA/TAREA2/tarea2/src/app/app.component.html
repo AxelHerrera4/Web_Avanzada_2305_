@@ -1,0 +1,77 @@
+<app-header></app-header>
+
+<!-- Productos -->
+<div class="container">
+  <app-product-card
+    name="Producto 1"
+    [price]="19.99"
+    description="Este es un producto de prueba.">
+  </app-product-card>
+  <app-product-card
+    name="Producto 2"
+    [price]="29.99"
+    description="Este es otro producto interesante.">
+  </app-product-card>
+</div>
+
+<hr />
+
+<!-- Lista de Tareas -->
+<app-task-list></app-task-list>
+
+<hr />
+
+<!-- Configuración -->
+<app-config-parent></app-config-parent>
+
+<hr />
+
+<!-- Sección del Formulario -->
+<section>
+  <h2>Formulario</h2>
+  <app-form-child (formSubmitted)="handleFormSubmission($event)"></app-form-child>
+  <p>Datos enviados: {{ submittedData }}</p>
+</section>
+
+<hr />
+
+<!-- Sección del Contador -->
+<section>
+  <h2>Contador</h2>
+  <app-counter-child (countChanged)="handleCountChange($event)"></app-counter-child>
+  <p>Valor del contador: {{ counterValue }}</p>
+</section>
+
+<hr />
+
+<!-- Total del Carrito -->
+<section>
+  <h2>Total del Carrito</h2>
+  <app-cart-total></app-cart-total>
+</section>
+
+<hr />
+
+<!-- Reproductor de Video -->
+<section>
+  <h2>Reproductor de Video</h2>
+  <app-video-player (videoStatusChanged)="handleVideoStatusChange($event)"></app-video-player>
+  <p>Estado del video: {{ videoStatus }}</p>
+</section>
+
+<hr />
+
+<!-- Validación de Formulario -->
+<section>
+  <h2>Validación de Formulario</h2>
+  <app-form-validator (formValidated)="handleFormValidation($event)"></app-form-validator>
+  <p>Resultado de la validación: {{ formValidationMessage }}</p>
+</section>
+
+<hr />
+
+<!-- Galería de Imágenes -->
+<section>
+  <h2>Galería de Imágenes</h2>
+  <app-image-gallery [images]="galleryImages"></app-image-gallery>
+</section>
